@@ -1,0 +1,289 @@
+accordnet
+active learning
+adaboost
+adadelta
+almeidapineda recurrent backpropagation
+alopex
+analogical modeling
+anomaly detection
+anova
+aode
+apache singa
+apriori algorithm
+artificial intelligence
+artificial neural network
+association rule learning
+association rules
+autoencoder
+automatic summarisation
+averaged onedependence estimators
+backpropagation
+bayesian belief network
+bayesian knowledge base
+bayesian network
+bayesian networks
+bayesian statistics
+biasvariance dilemma
+binary classifier
+bioinformatics
+biomedical informatics
+birch
+boosted tree
+boosting
+bootstrap aggregating
+bootstrap aggregating boosting
+c45 algorithm
+c50 algorithm
+caffe
+canonical correlation analysis
+casebased reasoning
+chisquared automatic interaction detection
+classification
+classification and regression tree
+classifiers
+cluster analysis
+clustering
+cn2 algorithm
+cntk
+collaborative and contentbased filtering
+collaborative filtering
+computer vision
+conceptual clustering
+conditional decision tree
+conditional random field
+constructing skill trees
+contentbased filtering
+convolutional autoencoder
+convolutional neural network
+cotraining
+data analyses
+data analysis
+data mining
+data preprocessing
+data science
+dbscan
+decision stump
+decision tree
+deep autoencoder
+deep belief networks
+deep boltzmann machine
+deep boltzmann machines
+deep convolutional neural networks
+deep learning
+deep recurrent neural networks
+deeplearning4j
+dehaenechangeux model
+denoising autoencoder
+diffusion map
+dimensionality reduction
+discriminative model
+dominancebased rough set approach
+dynamic time warping
+eclat algorithm
+elastic net
+email filtering
+empirical risk minimization
+ensemble averaging
+ensembles of classifiers
+errordriven learning
+evolutionary multimodal optimization
+expectationmaximization
+expectationmaximization algorithm
+extreme gradient boosting
+extreme learning machine
+facial recognition system
+factor analysis
+fastica
+feature engineering
+feature extraction
+feature learning
+feature selection
+feedforward neural network
+fishers linear discriminant
+forwardbackward algorithm
+fpgrowth algorithm
+fuzzy clustering
+gaussian naive bayes
+gaussian process regression
+gene expression programming
+generative adversarial networks
+generative learning model
+generative model
+generative models
+generative topographic map
+generec
+genetic algorithm for rule set production
+gensim
+gradient boosted decision tree
+gradient boosting machine
+gradient descent
+graphbased methods
+graphical models
+group method of data handling
+growing selforganizing map
+handwriting recognition
+hidden markov model
+hidden markov models
+hierarchical classifier
+hierarchical clustering
+hierarchical hidden markov model
+hierarchical temporal memory
+hybrid recommender systems
+hyper basis function network
+id3 algorithm
+idistance
+image recognition
+independent component analysis
+inductive logic programming
+information bottleneck method
+information fuzzy networks
+instancebased algorithm
+instancebased learning
+iterative dichotomiser
+k means
+keras
+kernel methods for vector output
+kernel principal component analysis
+kmeans clustering
+kmedians
+knearest neighbor
+knearest neighbors algorithm
+knearest neighbors classification
+knn
+language recognition
+lazy learning
+leabra
+learning automata
+learning to rank
+learning vector quantization
+least absolute shrinkage and selection operator
+leastangle regression
+lgbm
+lightgbm
+lindebuzogray algorithm
+linear classifier
+linear discriminant analysis
+linear regression
+local outlier factor
+logic learning machine
+logistic model tree
+logistic regression
+logitboost
+long shortterm memory
+lowdensity separation
+lstm
+machine learning
+machine translation
+machine vision
+manifold alignment
+markov chain monte carlo
+mcmc
+meanshift
+meta learning
+minimum message length
+minimum redundancy feature selection
+mixture of experts
+mlpack
+model selection
+multidimensional scaling
+multilabel classification
+multinomial logistic regression
+multinomial naive bayes
+multiple kernel learning
+multivariate adaptive regression splines
+naive bayes
+naive bayes classifier
+natural language processing
+nearest neighbor
+nearest neighbor algorithm
+nearest neighbour
+neural network
+nonnegative matrix factorization
+occam learning
+online machine learning
+optical character recognition
+optics algorithm
+ordinal classification
+ordinary least squares regression
+outofbag error
+pac learning
+partial least squares regression
+pattern recognition
+perceptron
+prefrontal cortex basal ganglia working memory
+preprocessing
+principal component analysis
+principal component regression
+probabilistic classifier
+probably approximately correct learning
+projection pursuit
+pvlv
+pytorch
+qlearning
+quadratic classifiers
+quadratic unconstrained binary optimization
+querylevel feature
+question answering
+quickprop
+radial basis function network
+random forest
+random forests
+randomized weighted majority algorithm
+recommendation system
+recurrent neural network
+regression
+regression analysis
+regularization algorithm
+reinforcement learning
+repeated incremental pruning to produce error reduction
+ridge regression
+ripple down rules
+rprop
+rulebased machine learning
+sammon mapping
+scikitlearn
+search engine
+search engine optimization
+selforganizing map
+semisupervised learning
+singlelinkage clustering
+skill chaining
+sklearn
+sliq
+social engineering
+sparse pca
+speech recognition
+speech synthesis
+sprint
+stacked autoencoders
+stacked generalization
+stateactionrewardstateaction
+statistical learning
+stepwise regression
+stochastic gradient descent
+structured knn
+structured prediction
+supervised learning
+supper vector classifier
+support vector machine
+support vector machines
+svc
+svm
+symbolic machine learning algorithm
+tdistributed stochastic neighbor embedding
+temporal difference learning
+tensorflow
+term frequency inverse document frequency
+text mining
+text simplification
+tf idf
+theano
+torch
+transduction
+unsupervised learning
+vc theory
+vector quantization
+wakesleep algorithm
+weighted majority algorithm
+xgb
+xgboost
