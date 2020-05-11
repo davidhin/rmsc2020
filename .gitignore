@@ -1,2 +1,4 @@
 kaggle_topic_modelling/lda_plots
 so_topic_modelling/lda_plots
+data/kg_forummessages.csv
+data/so_datascience.parquet
