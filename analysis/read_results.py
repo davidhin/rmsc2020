@@ -8,14 +8,14 @@ import matplotlib
 matplotlib.rcParams['font.family'] = ['Times New Roman']
 
 # Read StackOverflow
-path = '/home/david/Documents/topicmodelling/'
+path = '../so_topic_modelling/'
 df = pd.concat([pd.read_csv(i) for i in glob(path+'lda_plots/*.csv')])
 df = df[df["3"]==2][['0','2','3','4']].pivot('0', '4', '2').reset_index()
 df.columns = ['Topic Number', 'Gensim SO', 'Mallet SO']
 df_so = df.set_index("Topic Number").copy()
 
 # Read Kaggle
-path = '/home/david/Documents/topicmodelling/kaggle_topic_modelling/'
+path = '../kaggle_topic_modelling/'
 df = pd.concat([pd.read_csv(i) for i in glob(path+'lda_plots/*.csv')])
 df = df[df["3"]==1][['0','2','3','4']].pivot('0', '4', '2').reset_index()
 df.columns = ['Topic Number', 'Gensim KG', 'Mallet KG']
