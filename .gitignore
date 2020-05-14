@@ -1,4 +1,13 @@
-kaggle_topic_modelling/lda_plots
-so_topic_modelling/lda_plots
+mallet-2.0.8
+
 data/kg_forummessages.csv
 data/so_datascience.parquet
+data/*.parquet
+data/id2word.dictionary
+
+hptuning/eval
+hptuning/malletmodels
+hptuning/models
+hptuning/outputs
+hptuning/words
+hptuning/topics
