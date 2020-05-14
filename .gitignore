@@ -11,3 +11,5 @@ hptuning/models
 hptuning/outputs
 hptuning/words
 hptuning/topics
+
+analysis/malletmodels

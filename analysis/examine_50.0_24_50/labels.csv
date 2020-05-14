@@ -1,0 +1,25 @@
+topic,label
+0,Generic errors
+1,Training a model
+2,Feature selection and regression
+3,Performance optimisation
+4,Dataset sharing online
+5,"Input shape (tensors, arrays)"
+6,Tensorflow installation troubleshooting
+7,Tensorflow
+8,Dataset-specific related discussion
+9,Classification
+10,Processing scientific/field study data
+11,Neural Networks
+12,Natural Language Processing
+13,Keras
+14,Kaggle leaderboards
+15,"Big data, memory and GPU"
+16,Compliments
+17,"Kaggle competitions, submissions and teams"
+18,Evaluation and prediction
+19,"Data manipulation, dataframes, csv and files"
+20,Computer vision
+21,"OpenCV Java, Android, Caffe"
+22,Learning ML and DL
+23,Clustering
