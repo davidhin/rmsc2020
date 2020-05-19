@@ -13,3 +13,7 @@ hptuning/words
 hptuning/topics
 
 analysis/malletmodels
+
+tsne/data
+tsne/plotly
+tsne/pngs
