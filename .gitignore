@@ -17,3 +17,6 @@ analysis/malletmodels
 tsne/data
 tsne/plotly
 tsne/pngs
+
+analysis/conns.csv
+analysis/nodes.csv
