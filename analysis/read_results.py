@@ -7,7 +7,7 @@ import pandas as pd
 from glob import glob
 import seaborn as sns
 import matplotlib
-matplotlib.rcParams['font.family'] = ['Times New Roman']
+matplotlib.rcParams['font.family'] = ['Arial']
 
 # Get Coherence
 df = pd.concat([pd.read_csv(i) for i in glob('../hptuning/eval/*.csv')])
@@ -47,7 +47,7 @@ def lineplot(df, index, cols, ax):
     clrs = sns.color_palette("hls", 4)
     for clr, col in zip(clrs, cols):
         ax.plot(index, col, data=df, markersize=5, 
-                linewidth=2, marker='o', color=clr)
+                linewidth=2, marker='o', color='#000080')
     plt.grid(True, alpha=0.3)
     plt.xticks(fontsize=15)
     plt.xticks(np.arange(5, 31, 2))
@@ -60,8 +60,7 @@ lineplot(df.groupby('Number of Topics').max().reset_index(),
          ['Coherence'], 
          ax)
 
-plt.savefig('../outputs/coherence.svg', 
+plt.savefig('../outputs/coherence.png', 
             bbox_inches="tight", 
             dpi=300,
-            format='svg')
-
+            format='png')
