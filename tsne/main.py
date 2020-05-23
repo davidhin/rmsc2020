@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 import sys
 import matplotlib
-matplotlib.rcParams['font.family'] = ['Times New Roman']
+matplotlib.rcParams['font.family'] = ['Arial']
 import logging
 logging.basicConfig(level=logging.INFO)
 import plotly.express as px
@@ -89,15 +89,15 @@ def plottsne(tsnedf):
         )
         
     # Set ticks
-    plt.xticks(fontsize=35)
+    plt.xticks(ticks=[], fontsize=35)
     plt.xlabel('', fontsize=45)
-    plt.yticks(fontsize=35)
+    plt.yticks(ticks=[], fontsize=35)
     plt.ylabel('', fontsize=45)
 
     handles, labels = ax.get_legend_handles_labels()
     plt.legend(handles=handles[0:], 
                 labels=['T{}'.format(i) for i in labels],
-                bbox_to_anchor=(-0.05, -0.20, 1.05, .102), 
+                bbox_to_anchor=(0, -0.15, 1, .102), 
                 loc=3, 
                 ncol=12, 
                 mode="expand", 
@@ -122,7 +122,7 @@ plottsne(calc_tsne)
 sys.exit()
 
 # %%
-# plottsne(pd.read_parquet('data/20000/30_1000_200_10000.parquet'))
+plottsne(pd.read_parquet('data/20000/30_1000_200_10000.parquet'))
 
 
 
