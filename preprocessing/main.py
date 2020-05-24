@@ -15,6 +15,16 @@ tqdm.pandas()
 df_kg = pd.read_csv('../data/kg_forummessages.csv')
 
 # Group by Forum Topic
+def getyear(x):
+    years = [int(i.split()[0].split('/')[2]) for i in x]
+    return max(set(years), key=years.count)
+
+df_kg = df_kg.groupby('ForumTopicId').agg({
+    'PostDate': getyear,
+}).reset_index()
+df_kg.columns=['postid','creationdate']
+df_kg.to_csv('../data/kgdates.csv',index=0)
+
 df_kg = df_kg.groupby('ForumTopicId').agg({
     'Message': lambda x: ' '.join([str(i) for i in x]),
 }).reset_index()
