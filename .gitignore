@@ -20,3 +20,6 @@ tsne/pngs
 
 analysis/conns.csv
 analysis/nodes.csv
+
+data/kgdates.csv
+data/sodates*
