@@ -2,6 +2,7 @@
 #                                   SETUP                                #
 ##########################################################################
 import pandas as pd
+from glob import glob
 from operator import itemgetter
 from sklearn.manifold import TSNE
 import seaborn as sns
@@ -10,12 +11,17 @@ from pathlib import Path
 import numpy as np
 import sys
 import matplotlib
-matplotlib.rcParams['font.family'] = ['Times New Roman']
+matplotlib.rcParams['font.family'] = ['Arial']
 import logging
 logging.basicConfig(level=logging.INFO)
 import plotly.express as px
 from natsort import natsorted, index_natsorted, order_by_index
 import matplotlib.colors as mc
+from collections import Counter
+from tqdm import tqdm
+tqdm.pandas()
+import plotly.express as px
+from matplotlib.lines import Line2D
 
 print("Reading Data")
 df = pd.read_parquet('../data/post_topics_final.parquet')
@@ -29,10 +35,10 @@ df[['postid','source']] = df.key.str.split('_',expand=True)
 #%%#######################################################################
 #                                   Counts                               #
 ##########################################################################
-def hist(df):
+def hist(df, outputname='counts.png', figh=35, figw=34):
     
     # Create axis
-    _, ax = plt.subplots(figsize=(35,34))
+    _, ax = plt.subplots(figsize=(figh,figw))
         
     sns.barplot(x="key", y="label", 
                 hue="source", 
@@ -47,7 +53,7 @@ def hist(df):
     plt.ylabel('')
 
     plt.legend(fontsize=50)
-    plt.savefig('../outputs/counts.png', 
+    plt.savefig('../outputs/{}'.format(outputname), 
             bbox_inches="tight", 
             dpi=300,
             format='png')
@@ -140,3 +146,114 @@ def plot_heatmap(df):
         format='png')
 
 plot_heatmap(heatmap)
+
+#%%#######################################################################
+#                           Count ML Algorithms                          #
+##########################################################################
+
+df_lang = pd.read_parquet('../data/df_lang.parquet')
+df_lang = df_lang[df_lang.lang=='en']
+df_lang['key'] = df_lang.postid.astype(str) +'_'+ df_lang.source
+df_lang = df_lang.set_index('key')[['Message']].copy()
+df = df.set_index('key').join(df_lang).dropna().reset_index()
+
+# %% Prepare Data
+import so_textprocessing as stp
+tp = stp.TextPreprocess(strlist='../data/mlalgs.csv')
+df_wordmatch = df.rename(columns={'Message':'answers'})
+df_wordmatch.answers = df_wordmatch.answers.progress_apply(tp.stem)
+df_wordmatch = df_wordmatch.reindex(columns=[*df_wordmatch.columns.tolist(), 
+                                             'tags', 'title', 'question'], 
+           fill_value=' ')
+df_wordmatch.to_parquet('../data/df_wordmatch.parquet',
+                        compression='gzip',
+                        index=None)
+
+# %% Match Words
+tp = stp.TextPreprocess(strlist='../data/mlalgs.csv')
+wordmatch = tp.transform_df(df_wordmatch, columns=['Message'])
+
+# %% Final Word Counts
+wordcounts = wordmatch[['key','source','words']].copy()
+wordcounts = wordcounts[wordcounts.words!='']
+wordcounts.words = wordcounts.words.str.split('|')
+wordcounts = wordcounts.explode('words')
+mlDict = pd.read_csv('../data/mlalgsdict.csv').set_index('str')
+wordcounts = wordcounts.set_index('words').join(mlDict).reset_index(drop=1)
+wordcounts = wordcounts.drop_duplicates()
+sokgcount = Counter(wordcounts.source)
+wordcounts = wordcounts.groupby(['label','source']).count().reset_index()
+wordcounts['key'] = wordcounts.apply(lambda x: x.key/sokgcount[x.source],axis=1)
+wordcounts.source = wordcounts.source.apply(lambda x: 'Kaggle' if x=='kg'
+                                            else 'StackOverflow')
+wordcounts.key *= 100
+hist(wordcounts, outputname='algorithmCount.png', figh=15)
+# In total, there are Counter({'so': 45411, 'kg': 22599}) string matches
+# Of ML algorithms. Duplicate mentions of a ML algorithm in a post (e.g.
+# CNN and convolutional neural network) are treated as one, i.e. not counted
+# more than once per post. 
+
+#%%#######################################################################
+#                          Join dates SO/Kaggle                          #
+##########################################################################
+dates = pd.concat([pd.read_csv(i) for i in glob('../data/sodate*')])
+dates.id = dates.id.astype('str')
+dates = dates.rename(columns={'id':'postid'})
+dates = dates.set_index('postid')
+dates.creationdate = dates.creationdate.apply(lambda x: x.split('-')[0])
+
+kgdates = pd.read_csv('../data/kgdates.csv')
+kgdates.postid = kgdates.postid.astype('str')
+kgdates = kgdates.set_index('postid')
+
+alldates = pd.concat([dates,kgdates])
+alldates.creationdate = alldates.creationdate.astype(int)
+
+dfdates = df.set_index('postid').join(alldates).dropna()
+dfdates = dfdates[dfdates.creationdate!=2020]
+
+# %% Data
+plotyear = dfdates.groupby(['creationdate','label','source'])\
+                  .count()\
+                  .reset_index()
+plotyear = plotyear.sort_values(['creationdate'])
+plotyear = plotyear.reindex(index=order_by_index(plotyear.index, 
+                                                 index_natsorted(plotyear.label)))
+
+# %% Lineplot
+sns.set(style="white", rc={"lines.linewidth": 6})
+
+def lineplot(plotyear, outputname):
+    _, ax = plt.subplots(figsize=(35,35))
+    sns.lineplot(x="creationdate", y="key",
+                    hue="label", 
+                    data=plotyear, 
+                    palette=px.colors.qualitative.Dark24,
+                    ax=ax)
+    linestyles = ['solid','dotted','dashed','dashdot']
+    custom_lines = []
+    for l in range(24):
+        ax.lines[l].set_linestyle(linestyles[l % len(linestyles)])
+        custom_lines.append(Line2D([0], [0], 
+                                   color=px.colors.qualitative.Dark24[l], 
+                                   lw=8, 
+                                   ls=linestyles[l % len(linestyles)]))
+
+    plt.xticks(fontsize=50)
+    plt.xlabel('')
+    plt.yticks(fontsize=50)
+    plt.ylabel('')
+    
+    ax.legend(custom_lines, 
+              plotyear.label.drop_duplicates().tolist(), 
+              fontsize=40)
+    plt.savefig('../outputs/{}'.format(outputname), 
+            bbox_inches="tight", 
+            dpi=300,
+            format='png')
+
+lineplot(plotyear[plotyear.source=='so'], 'so_topics_over_time.png')
+lineplot(plotyear[plotyear.source=='kg'], 'kg_topics_over_time.png')
+
+
+ # %%
