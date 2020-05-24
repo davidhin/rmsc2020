@@ -1,0 +1,45 @@
+str,label
+cnn,ConvNN
+convolutional neural network,ConvNN
+deep neural network,DeepNN
+boltzmann,Boltzmann Machine
+autoencoder,Autoencoder
+belief network,Belief Network
+recurrent neural network,RecurrentNN
+rnn,RecurrentNN
+stochastic gradient descent,Stochastic Gradient Descent
+sgd,Stochastic Gradient Descent
+lstm,Long Short Term Memory
+long shortterm memory,Long Short Term Memory
+long short term memory,Long Short Term Memory
+gan,Adversarial Network
+generative adversarial network,Adversarial Network
+adversarial network,Adversarial Network
+perceptron,Perceptron
+extreme gradient boosting,XGBoost
+xgb,XGBoost
+xgboost,XGBoost
+adaboost,AdaBoost
+decision tree,Decision Tree
+lgbm,LightGBM
+lightgbm,LightGBM
+light gradient boosting machine,LightGBM
+random forest,Random Forest
+linear regression,Linear Regression
+logistic regression,Logistic Regression
+naive bayes,Naive Bayes
+k means,K-Means
+nearest neighbor,Nearest Neighbor
+nearest neighbour,Nearest Neighbor
+knn,Nearest Neighbor
+markov chain monte carlo,Markov Chain Monte Carlo
+mcmc,Markov Chain Monte Carlo
+principal component analysis,Principal Component Analysis
+pca,Principal Component Analysis
+linear discriminant analysis,Linear Discriminant Analysis
+lda,Linear Discriminant Analysis
+support vector machine,Support Vector Machine
+support vector machines,Support Vector Machine
+svc,Support Vector Classifier
+support vector classifier,Support Vector Classifier
+svm,Support Vector Machine
