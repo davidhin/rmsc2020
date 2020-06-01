@@ -1,0 +1,49 @@
+label,source,key,counts
+T0: Generic Errors,Kaggle,0.029964052884908304,2459
+T0: Generic Errors,StackOverflow,0.0597299841929326,6915
+T1: Training a Model,Kaggle,0.04273441783951745,3507
+T1: Training a Model,StackOverflow,0.038403399815152325,4446
+T2: Feature Selection and Regression,Kaggle,0.042003290074940594,3447
+T2: Feature Selection and Regression,StackOverflow,0.03439548764371043,3982
+T3: Performance Optimisation,Kaggle,0.0069213428379942725,568
+T3: Performance Optimisation,StackOverflow,0.050288932461497265,5822
+T4: Online Dataset Sharing,Kaggle,0.10734174130262597,8809
+T4: Online Dataset Sharing,StackOverflow,0.0033514437985333115,388
+T5: Tensor/Array Input Shape,Kaggle,0.0034119295680253457,280
+T5: Tensor/Array Input Shape,StackOverflow,0.10383429356229107,12021
+T6: Tensorflow Installation,Kaggle,0.011880826174373972,975
+T6: Tensorflow Installation,StackOverflow,0.07033713106045555,8143
+T7: Tensorflow,Kaggle,0.0018156339486992018,149
+T7: Tensorflow,StackOverflow,0.12751034369574418,14762
+T8: Dataset-specific Discussion,Kaggle,0.08266617924815695,6784
+T8: Dataset-specific Discussion,StackOverflow,0.006236449542631574,722
+T9: Classification,Kaggle,0.01219764820569061,1001
+T9: Classification,StackOverflow,0.07095904846636895,8215
+T10: Processing Scientific/Field Data,Kaggle,0.06405897763967587,5257
+T10: Processing Scientific/Field Data,StackOverflow,0.020022285373711896,2318
+T11: Neural Networks,Kaggle,0.0060318040577590935,495
+T11: Neural Networks,StackOverflow,0.07060490105466827,8174
+T12: Natural Language Processing,Kaggle,0.021970389325534637,1803
+T12: Natural Language Processing,StackOverflow,0.031087232553921103,3599
+T13: Keras,Kaggle,0.022177542192164747,1820
+T13: Keras,StackOverflow,0.055609781378756336,6438
+T14: Kaggle Leaderboards,Kaggle,0.098251386096387,8063
+T14: Kaggle Leaderboards,StackOverflow,0.0010624422351020548,123
+T15: Big Data and GPU,Kaggle,0.02049594833363797,1682
+T15: Big Data and GPU,StackOverflow,0.050850385675169085,5887
+T16: Compliments,Kaggle,0.11780905379881801,9668
+T16: Compliments,StackOverflow,0.0001641170932271467,19
+T17: Kaggle Competitions/Teams,Kaggle,0.10732955583988302,8808
+T17: Kaggle Competitions/Teams,StackOverflow,0.00011229064273436353,13
+T18: Evaluation and Prediction,Kaggle,0.029050143179187228,2384
+T18: Evaluation and Prediction,StackOverflow,0.02161162985549058,2502
+T19: Data Manipulation/File IO,Kaggle,0.04706025711326388,3862
+T19: Data Manipulation/File IO,StackOverflow,0.013811749056326714,1599
+T20: Computer Vision,Kaggle,0.028087491622494364,2305
+T20: Computer Vision,StackOverflow,0.06359105475464495,7362
+"T21: OpenCV, Android, Caffe",Kaggle,0.004179613720831049,343
+"T21: OpenCV, Android, Caffe",StackOverflow,0.03700408565184718,4284
+T22: Learning ML and DL,Kaggle,0.08386035459696582,6882
+T22: Learning ML and DL,StackOverflow,0.016238954487738724,1880
+T23: Clustering,Kaggle,0.008700420398464631,714
+T23: Clustering,StackOverflow,0.053182575947344324,6157

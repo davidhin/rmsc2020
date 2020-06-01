@@ -61,6 +61,10 @@ def hist(df, outputname='counts.png', figh=35, figw=34):
 counts = df.groupby(['label','source']).count()[['key']].reset_index()
 counts.source = counts.source.apply(lambda x: 'Kaggle' if x=='kg'
                                     else 'StackOverflow')
+total_kg, total_so = df.groupby('source').count().topic.tolist()
+counts['counts'] = counts.key
+counts['key'] = counts.apply(lambda x: x.key/total_kg if x.source=='Kaggle' 
+              else x.key/total_so, axis=1)
 counts = counts.reindex(index=order_by_index(counts.index, index_natsorted(counts.label)))
 hist(counts)
 
